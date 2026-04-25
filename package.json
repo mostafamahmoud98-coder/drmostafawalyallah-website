@@ -1,0 +1,17 @@
+{
+  "name": "drmostafawalyallah-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Bilingual ophthalmology website for Dr. Mostafa Walyallah, Eleventy + Decap CMS.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

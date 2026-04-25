@@ -1,0 +1,11 @@
+# Netlify build configuration for the Eleventy + Decap CMS site.
+[build]
+  command  = "npm install && npx @11ty/eleventy"
+  publish  = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Decap CMS uses Netlify Identity for login + Git Gateway for writes.
+# Identity must be enabled in the Netlify dashboard (Site → Integrations → Identity → Enable).
+# Git Gateway must be enabled in the same Identity panel.

@@ -1,0 +1,28 @@
+# Global site settings — used in headers, footers, JSON-LD, contact buttons.
+# Edit via the CMS at /admin/ → "Site Settings".
+
+domain: drmostafawalyallah.com
+url: "https://www.drmostafawalyallah.com"
+
+# Phone is the same number used for both call and WhatsApp.
+phone_intl: "+201031611802"     # used in tel: links and JSON-LD
+phone_display: "+20 103 161 1802" # how it's shown to humans
+
+# Pre-filled WhatsApp messages — keep URL-encoded.
+whatsapp_message_ar: "%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF"
+whatsapp_message_en: "Hello%20Doctor%2C%20I%27d%20like%20to%20book%20an%20appointment."
+
+# Doctor name — used in titles, schema.org, footer.
+doctor_name:
+  ar: "د. مصطفى ولي الله"
+  en: "Dr. Mostafa Walyallah"
+
+doctor_role:
+  ar: "أخصائي طب وجراحة العيون"
+  en: "Ophthalmology Specialist"
+
+# Years of experience and procedure count for the stats band — update annually.
+years_experience: 7
+procedures_completed: 1000
+practice_sites: 3
+international_awards: 4

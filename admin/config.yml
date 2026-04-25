@@ -1,0 +1,59 @@
+# Decap CMS configuration — schema describing what's editable in the admin.
+# Authentication uses Netlify Identity + Git Gateway (must be enabled in Netlify dashboard).
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded photos go and how they're referenced in markdown.
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+
+# Show a preview pane next to the editor.
+publish_mode: simple
+display_url: https://www.drmostafawalyallah.com
+site_url: https://www.drmostafawalyallah.com
+logo_url: https://www.drmostafawalyallah.com/assets/images/favicon.svg
+
+# Collections — the editable content groups shown in the admin sidebar.
+collections:
+
+  # 1. Site-wide settings: phone, doctor name, years/awards counts.
+  - name: site_settings
+    label: "Site Settings"
+    files:
+      - file: "src/_data/site.yml"
+        label: "Site Settings"
+        name: "site"
+        format: yaml
+        editor:
+          preview: false
+        fields:
+          - { name: domain, label: "Domain", widget: string }
+          - { name: url, label: "Full URL", widget: string }
+          - { name: phone_intl, label: "Phone (international format, with +)", widget: string, hint: "Used in click-to-call and JSON-LD. Example: +201031611802" }
+          - { name: phone_display, label: "Phone (display format)", widget: string, hint: "How it's shown to patients. Example: +20 103 161 1802" }
+          - { name: whatsapp_message_ar, label: "WhatsApp pre-filled message (Arabic, URL-encoded)", widget: string, required: false }
+          - { name: whatsapp_message_en, label: "WhatsApp pre-filled message (English, URL-encoded)", widget: string, required: false }
+          - label: "Doctor name (bilingual)"
+            name: doctor_name
+            widget: object
+            fields:
+              - { name: ar, label: "Arabic", widget: string }
+              - { name: en, label: "English", widget: string }
+          - label: "Doctor role / title"
+            name: doctor_role
+            widget: object
+            fields:
+              - { name: ar, label: "Arabic", widget: string }
+              - { name: en, label: "English", widget: string }
+          - { name: years_experience, label: "Years of clinical experience", widget: number, value_type: int, min: 0, max: 60 }
+          - { name: procedures_completed, label: "Procedures completed", widget: number, value_type: int, min: 0, max: 100000 }
+          - { name: practice_sites, label: "Number of practice sites", widget: number, value_type: int, min: 1, max: 10 }
+          - { name: international_awards, label: "Number of international awards", widget: number, value_type: int, min: 0, max: 100 }
+
+  # Future collections (added in Phase 2b/2c):
+  # - clinic locations
+  # - awards ribbon items
+  # - homepage hero copy (AR + EN)
+  # - FAQ items
+  # - service pages
