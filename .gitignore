@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / OS noise
+*~
+*.swp
+.idea/
+.vscode/
+Thumbs.db
+
+# Build output (added in Phase 2 when we wire Eleventy)
+_site/
+node_modules/
+.cache/
+
+# Local-only previews
+preview-output/
