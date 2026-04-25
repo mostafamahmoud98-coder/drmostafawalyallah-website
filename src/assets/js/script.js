@@ -4,6 +4,22 @@
 (function () {
   'use strict';
 
+  // ---------- Netlify Identity invite-token redirect ----------
+  // If a Netlify Identity invite/recovery link lands on any page (not /admin/),
+  // redirect to /admin/ keeping the URL hash so the CMS widget can pick it up.
+  if (typeof window !== 'undefined' && window.location && window.location.hash) {
+    var h = window.location.hash;
+    if (
+      (h.indexOf('invite_token=') !== -1 ||
+       h.indexOf('recovery_token=') !== -1 ||
+       h.indexOf('confirmation_token=') !== -1) &&
+      window.location.pathname.indexOf('/admin') !== 0
+    ) {
+      window.location.replace('/admin/' + h);
+      return;
+    }
+  }
+
   // ---------- Mobile nav toggle ----------
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.nav');
